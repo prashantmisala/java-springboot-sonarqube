@@ -1,17 +1,6 @@
 pipeline {
     agent any
 
-    environment {
-        // SonarQube server configured in Jenkins (Manage Jenkins > Configure System)
-        SONARQUBE_ENV = 'MySonarQube'  
-
-        // Artifactory server ID configured in Jenkins (Manage Jenkins > Configure System > JFrog)
-        ARTIFACTORY_SERVER = 'MyArtifactory'  
-
-        // Maven tool configured in Jenkins (Manage Jenkins > Global Tool Configuration)
-        MAVEN_HOME = tool 'Maven3'
-    }
-
     stages {
         stage('Checkout Code') {
             steps {
@@ -49,4 +38,5 @@ pipeline {
             }
         }
     }
-}
+  }
+}    
